@@ -1,99 +1,1274 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iBridge Education</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="iBridge Education 提供國際教育、IB 課程設計、教師培訓、教育研究與學生學習支援。">
+  <meta name="keywords" content="iBridge Education, IB, 國際教育, 教師培訓, 課程設計, 教育研究">
+  <meta name="author" content="iBridge Education">
+  <meta property="og:title" content="iBridge Education">
+  <meta property="og:description" content="Connecting learning, research and innovation.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ibridge.info">
+  <title>iBridge Education｜Learning · Research · Innovation</title>
 
-    <style>
+  <style>
+    :root {
+      --navy: #0c2f5c;
+      --blue: #1758a8;
+      --sky: #eaf4ff;
+      --teal: #0f7c82;
+      --gold: #d9a441;
+      --ink: #172033;
+      --muted: #667085;
+      --line: #dfe6ef;
+      --surface: #ffffff;
+      --soft: #f6f9fc;
+      --radius: 22px;
+      --shadow: 0 16px 45px rgba(12, 47, 92, 0.12);
+      --max: 1180px;
+    }
 
-        body{
-            margin:0;
-            font-family:Arial, Helvetica, sans-serif;
-            background:#f5f7fa;
-            color:#333;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        header{
-            background:#0d47a1;
-            color:white;
-            text-align:center;
-            padding:70px 20px;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        header h1{
-            font-size:48px;
-            margin-bottom:10px;
-        }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC",
+        "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
+      background: var(--surface);
+      color: var(--ink);
+      line-height: 1.7;
+    }
 
-        header p{
-            font-size:22px;
-        }
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-        section{
-            max-width:900px;
-            margin:auto;
-            padding:60px 25px;
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        .card{
-            background:white;
-            padding:30px;
-            border-radius:16px;
-            box-shadow:0 8px 20px rgba(0,0,0,.08);
-        }
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
 
-        footer{
-            background:#0d47a1;
-            color:white;
-            text-align:center;
-            padding:30px;
-        }
+    .container {
+      width: min(calc(100% - 36px), var(--max));
+      margin: 0 auto;
+    }
 
-    </style>
+    .section {
+      padding: 96px 0;
+    }
 
+    .section-soft {
+      background: var(--soft);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--teal);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 5vw, 3.45rem);
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+      color: var(--navy);
+      margin-bottom: 18px;
+    }
+
+    .section-lead {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.93);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(223, 230, 239, 0.9);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: linear-gradient(135deg, var(--navy), var(--teal));
+      box-shadow: 0 10px 24px rgba(15, 124, 130, 0.25);
+      font-size: 1.1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: #344054;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .lang-toggle,
+    .menu-toggle {
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--navy);
+      border-radius: 999px;
+      padding: 9px 13px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border-radius: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 48px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 750;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: white;
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      box-shadow: 0 12px 26px rgba(23, 88, 168, 0.24);
+    }
+
+    .btn-secondary {
+      color: var(--navy);
+      background: white;
+      border-color: var(--line);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 720px;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(36, 168, 164, 0.24), transparent 34%),
+        radial-gradient(circle at 10% 75%, rgba(217, 164, 65, 0.16), transparent 28%),
+        linear-gradient(145deg, #f8fbff 0%, #eef7ff 52%, #f3fbfa 100%);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(23, 88, 168, 0.13);
+    }
+
+    .hero::before {
+      width: 520px;
+      height: 520px;
+      right: -190px;
+      top: -160px;
+    }
+
+    .hero::after {
+      width: 350px;
+      height: 350px;
+      right: 90px;
+      top: 80px;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      align-items: center;
+      gap: 60px;
+      padding: 100px 0;
+    }
+
+    .hero h1 {
+      max-width: 780px;
+      font-size: clamp(3.2rem, 8vw, 6.6rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      color: var(--navy);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span {
+      color: var(--teal);
+    }
+
+    .hero-text {
+      max-width: 700px;
+      color: #4b5b73;
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-bottom: 38px;
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 26px;
+    }
+
+    .hero-stat strong {
+      display: block;
+      color: var(--navy);
+      font-size: 1.45rem;
+    }
+
+    .hero-stat span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 470px;
+      display: grid;
+      place-items: center;
+    }
+
+    .visual-card {
+      width: min(100%, 430px);
+      padding: 34px;
+      border-radius: 32px;
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .bridge-symbol {
+      height: 220px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .bridge-symbol::before {
+      content: "";
+      width: 230px;
+      height: 115px;
+      border: 18px solid var(--blue);
+      border-bottom: 0;
+      border-radius: 230px 230px 0 0;
+      opacity: 0.95;
+    }
+
+    .bridge-symbol::after {
+      content: "";
+      position: absolute;
+      width: 270px;
+      height: 10px;
+      background: var(--teal);
+      border-radius: 99px;
+      bottom: 36px;
+      box-shadow:
+        -95px 28px 0 -2px var(--gold),
+        95px 28px 0 -2px var(--gold);
+    }
+
+    .visual-card h3 {
+      color: var(--navy);
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+    }
+
+    .visual-card p {
+      color: var(--muted);
+    }
+
+    .floating-chip {
+      position: absolute;
+      padding: 12px 16px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      box-shadow: 0 10px 24px rgba(12, 47, 92, 0.11);
+      font-weight: 750;
+      color: var(--navy);
+    }
+
+    .chip-one {
+      top: 44px;
+      left: -18px;
+    }
+
+    .chip-two {
+      right: -22px;
+      bottom: 92px;
+    }
+
+    .trust-strip {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: white;
+    }
+
+    .trust-list {
+      min-height: 98px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      align-items: center;
+      gap: 20px;
+      text-align: center;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .about-grid,
+    .research-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 62px;
+      align-items: center;
+    }
+
+    .about-panel {
+      padding: 36px;
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, var(--navy), #154d88);
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .about-panel h3 {
+      font-size: 1.7rem;
+      margin-bottom: 14px;
+    }
+
+    .about-panel p {
+      color: rgba(255, 255, 255, 0.78);
+      margin-bottom: 24px;
+    }
+
+    .check-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .check-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .check {
+      flex: 0 0 26px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, 0.14);
+      color: #baf4ef;
+      font-weight: 900;
+    }
+
+    .cards {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: white;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+    }
+
+    .icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: var(--sky);
+      color: var(--blue);
+      font-size: 1.4rem;
+      margin-bottom: 22px;
+    }
+
+    .card h3 {
+      color: var(--navy);
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .programmes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 48px;
+    }
+
+    .programme {
+      min-height: 280px;
+      padding: 36px;
+      border-radius: var(--radius);
+      position: relative;
+      overflow: hidden;
+      color: white;
+    }
+
+    .programme:first-child {
+      background: linear-gradient(145deg, var(--blue), #2977c8);
+    }
+
+    .programme:last-child {
+      background: linear-gradient(145deg, var(--teal), #15979c);
+    }
+
+    .programme::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      right: -60px;
+      bottom: -80px;
+    }
+
+    .programme h3 {
+      font-size: 1.85rem;
+      margin-bottom: 14px;
+    }
+
+    .programme p {
+      color: rgba(255, 255, 255, 0.83);
+      max-width: 480px;
+      margin-bottom: 22px;
+    }
+
+    .programme a {
+      font-weight: 800;
+    }
+
+    .research-panel {
+      min-height: 440px;
+      border-radius: 30px;
+      background:
+        linear-gradient(rgba(12, 47, 92, 0.82), rgba(12, 47, 92, 0.82)),
+        url("https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1200&q=80")
+        center/cover;
+      padding: 38px;
+      color: white;
+      display: flex;
+      align-items: flex-end;
+      box-shadow: var(--shadow);
+    }
+
+    .research-panel h3 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .research-panel p {
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .research-list {
+      display: grid;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .research-item {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .research-item strong {
+      display: block;
+      color: var(--navy);
+      margin-bottom: 5px;
+    }
+
+    .research-item span {
+      color: var(--muted);
+    }
+
+    .resources-grid {
+      margin-top: 46px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .resource-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: white;
+    }
+
+    .resource-cover {
+      height: 170px;
+      padding: 24px;
+      display: flex;
+      align-items: flex-end;
+      color: white;
+      background: linear-gradient(135deg, var(--navy), var(--teal));
+    }
+
+    .resource-card:nth-child(2) .resource-cover {
+      background: linear-gradient(135deg, #6d3a8c, #9d64bd);
+    }
+
+    .resource-card:nth-child(3) .resource-cover {
+      background: linear-gradient(135deg, #a4631d, var(--gold));
+    }
+
+    .resource-body {
+      padding: 25px;
+    }
+
+    .resource-body h3 {
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .resource-body p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .text-link {
+      color: var(--blue);
+      font-weight: 800;
+    }
+
+    .contact-card {
+      padding: 38px;
+      border-radius: var(--radius);
+      background: var(--navy);
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card h3 {
+      font-size: 1.7rem;
+      margin-bottom: 14px;
+    }
+
+    .contact-card p {
+      color: rgba(255, 255, 255, 0.78);
+      margin-bottom: 24px;
+    }
+
+    .contact-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 16px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .field label {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 15px;
+      background: white;
+      color: var(--ink);
+    }
+
+    .field textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-note {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    footer {
+      background: #081f3d;
+      color: white;
+      padding: 52px 0 28px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr repeat(3, 1fr);
+      gap: 32px;
+      margin-bottom: 38px;
+    }
+
+    .footer-brand p,
+    .footer-col a {
+      color: rgba(255, 255, 255, 0.67);
+    }
+
+    .footer-col {
+      display: grid;
+      align-content: start;
+      gap: 9px;
+    }
+
+    .footer-col h4 {
+      margin-bottom: 8px;
+    }
+
+    .footer-bottom {
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 0.9rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .nav-links {
+        position: absolute;
+        top: 76px;
+        left: 18px;
+        right: 18px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: white;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 13px 12px;
+      }
+
+      .menu-toggle {
+        display: inline-grid;
+        place-items: center;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .research-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 390px;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .trust-list,
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 680px) {
+      .section {
+        padding: 72px 0;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-grid {
+        padding: 72px 0;
+        gap: 38px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 16vw, 4.7rem);
+      }
+
+      .hero-actions,
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .nav .btn-primary {
+        display: none;
+      }
+
+      .cards,
+      .programmes,
+      .resources-grid,
+      .trust-list,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .chip-one {
+        left: 0;
+      }
+
+      .chip-two {
+        right: 0;
+      }
+
+      .visual-card {
+        padding: 24px;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="iBridge Education 首頁">
+        <span class="brand-mark">iB</span>
+        <span>iBridge Education</span>
+      </a>
 
-<header>
+      <nav class="nav-links" id="navLinks" aria-label="主要導覽">
+        <a href="#about" data-zh="關於我們" data-en="About">關於我們</a>
+        <a href="#services" data-zh="服務" data-en="Services">服務</a>
+        <a href="#programmes" data-zh="課程" data-en="Programmes">課程</a>
+        <a href="#research" data-zh="研究" data-en="Research">研究</a>
+        <a href="#resources" data-zh="資源" data-en="Resources">資源</a>
+        <a href="#contact" data-zh="聯絡我們" data-en="Contact">聯絡我們</a>
+      </nav>
 
-<h1>iBridge Education</h1>
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle" type="button">EN</button>
+        <a class="btn btn-primary" href="#contact" data-zh="預約諮詢" data-en="Book a Consultation">預約諮詢</a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="開啟選單">☰</button>
+      </div>
+    </div>
+  </header>
 
-<p>Learning • Research • Innovation</p>
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow" data-zh="國際教育 × 研究 × 創新" data-en="International Education · Research · Innovation">
+            國際教育 × 研究 × 創新
+          </span>
 
-</header>
+          <h1 data-zh="連結學習，<span>開創未來</span>" data-en="Connecting learning, <span>shaping futures</span>">
+            連結學習，<span>開創未來</span>
+          </h1>
 
-<section>
+          <p class="hero-text"
+             data-zh="iBridge Education 連結國際課程、教育研究與實務創新，協助學校、教師與學生建立更有深度、更具韌性、也更面向未來的學習經驗。"
+             data-en="iBridge Education connects international curricula, educational research and practical innovation to create deeper, more resilient and future-ready learning experiences.">
+            iBridge Education 連結國際課程、教育研究與實務創新，協助學校、教師與學生建立更有深度、更具韌性、也更面向未來的學習經驗。
+          </p>
 
-<div class="card">
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#services" data-zh="探索服務 →" data-en="Explore our services →">探索服務 →</a>
+            <a class="btn btn-secondary" href="#about" data-zh="認識 iBridge" data-en="Discover iBridge">認識 iBridge</a>
+          </div>
 
-<h2>Welcome!</h2>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <strong>IB</strong>
+              <span data-zh="課程與評量" data-en="Curriculum & Assessment">課程與評量</span>
+            </div>
+            <div class="hero-stat">
+              <strong>AI</strong>
+              <span data-zh="教育創新" data-en="Educational Innovation">教育創新</span>
+            </div>
+            <div class="hero-stat">
+              <strong>Research</strong>
+              <span data-zh="實證導向" data-en="Evidence-informed">實證導向</span>
+            </div>
+          </div>
+        </div>
 
-<p>
+        <div class="hero-visual" aria-label="iBridge 品牌視覺">
+          <span class="floating-chip chip-one" data-zh="教師培訓" data-en="Teacher Development">教師培訓</span>
+          <div class="visual-card">
+            <div class="bridge-symbol"></div>
+            <h3 data-zh="Bridge ideas into impact." data-en="Bridge ideas into impact.">Bridge ideas into impact.</h3>
+            <p data-zh="將研究、課程與教學實務連結，轉化為可實施的教育改變。"
+               data-en="Connecting research, curriculum and classroom practice to create meaningful educational change.">
+              將研究、課程與教學實務連結，轉化為可實施的教育改變。
+            </p>
+          </div>
+          <span class="floating-chip chip-two" data-zh="學生學習" data-en="Student Learning">學生學習</span>
+        </div>
+      </div>
+    </section>
 
-Congratulations!
+    <section class="trust-strip">
+      <div class="container trust-list">
+        <span data-zh="國際課程設計" data-en="International Curriculum Design">國際課程設計</span>
+        <span data-zh="教師專業成長" data-en="Teacher Professional Growth">教師專業成長</span>
+        <span data-zh="學生學習支援" data-en="Student Learning Support">學生學習支援</span>
+        <span data-zh="教育研究與顧問" data-en="Research & Consultancy">教育研究與顧問</span>
+      </div>
+    </section>
 
-You have successfully created your first website using GitHub.
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="reveal">
+          <span class="eyebrow" data-zh="關於 iBridge" data-en="About iBridge">關於 iBridge</span>
+          <h2 class="section-title"
+              data-zh="讓教育理念真正走進課堂"
+              data-en="Turning educational ideas into classroom practice">
+            讓教育理念真正走進課堂
+          </h2>
+          <p class="section-lead"
+             data-zh="我們相信，真正有效的教育創新不只來自新工具，更來自清楚的課程架構、專業判斷、可靠證據，以及對學生需要的深度理解。"
+             data-en="Meaningful educational innovation comes not only from new tools, but from coherent curriculum design, professional judgement, reliable evidence and a deep understanding of learners.">
+            我們相信，真正有效的教育創新不只來自新工具，更來自清楚的課程架構、專業判斷、可靠證據，以及對學生需要的深度理解。
+          </p>
+        </div>
 
-This website will soon be published on
+        <div class="about-panel reveal">
+          <h3 data-zh="我們的核心方向" data-en="Our core directions">我們的核心方向</h3>
+          <p data-zh="透過跨領域合作，把國際教育、神經科學、正向心理學與人工智慧轉化為具體、可評估的教育實踐。"
+             data-en="We translate international education, neuroscience, positive psychology and artificial intelligence into practical, measurable educational action.">
+            透過跨領域合作，把國際教育、神經科學、正向心理學與人工智慧轉化為具體、可評估的教育實踐。
+          </p>
+          <ul class="check-list">
+            <li><span class="check">✓</span><span data-zh="課程設計與垂直銜接" data-en="Curriculum design and vertical alignment">課程設計與垂直銜接</span></li>
+            <li><span class="check">✓</span><span data-zh="教師培訓與專業學習" data-en="Teacher development and professional learning">教師培訓與專業學習</span></li>
+            <li><span class="check">✓</span><span data-zh="學生學習與身心韌性" data-en="Student learning and wellbeing">學生學習與身心韌性</span></li>
+            <li><span class="check">✓</span><span data-zh="研究、評估與持續改善" data-en="Research, evaluation and continuous improvement">研究、評估與持續改善</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<strong>https://ibridge.info</strong>
+    <section class="section section-soft" id="services">
+      <div class="container">
+        <span class="eyebrow" data-zh="我們的服務" data-en="Our Services">我們的服務</span>
+        <h2 class="section-title"
+            data-zh="為學校、教師與學生提供完整支援"
+            data-en="Integrated support for schools, teachers and learners">
+          為學校、教師與學生提供完整支援
+        </h2>
+        <p class="section-lead"
+           data-zh="從策略規劃到課堂實施，我們協助合作夥伴建立可持續、可評估且符合真實需求的教育方案。"
+           data-en="From strategic planning to classroom implementation, we help partners build sustainable, measurable and context-responsive educational programmes.">
+          從策略規劃到課堂實施，我們協助合作夥伴建立可持續、可評估且符合真實需求的教育方案。
+        </p>
 
-through Cloudflare Pages.
+        <div class="cards">
+          <article class="card reveal">
+            <div class="icon">◎</div>
+            <h3 data-zh="IB 課程與評量" data-en="IB Curriculum & Assessment">IB 課程與評量</h3>
+            <p data-zh="MYP、DP 與跨學科課程規劃、評量設計、垂直銜接與品質檢核。"
+               data-en="MYP, DP and interdisciplinary curriculum planning, assessment design, vertical alignment and quality review.">
+              MYP、DP 與跨學科課程規劃、評量設計、垂直銜接與品質檢核。
+            </p>
+          </article>
 
-</p>
+          <article class="card reveal">
+            <div class="icon">✦</div>
+            <h3 data-zh="AI 教育整合" data-en="AI Integration in Education">AI 教育整合</h3>
+            <p data-zh="協助學校安全、有效並具教學目的地導入生成式 AI 與數位工具。"
+               data-en="Supporting schools to adopt generative AI and digital tools safely, effectively and with clear pedagogical purpose.">
+              協助學校安全、有效並具教學目的地導入生成式 AI 與數位工具。
+            </p>
+          </article>
 
-</div>
+          <article class="card reveal">
+            <div class="icon">△</div>
+            <h3 data-zh="教師專業培訓" data-en="Teacher Professional Development">教師專業培訓</h3>
+            <p data-zh="提供工作坊、教練、共同備課與客製化專業學習方案。"
+               data-en="Workshops, coaching, collaborative planning and tailored professional learning programmes.">
+              提供工作坊、教練、共同備課與客製化專業學習方案。
+            </p>
+          </article>
 
-</section>
+          <article class="card reveal">
+            <div class="icon">◇</div>
+            <h3 data-zh="研究與顧問服務" data-en="Research & Consultancy">研究與顧問服務</h3>
+            <p data-zh="方案評估、教育研究設計、資料分析與學校改善建議。"
+               data-en="Programme evaluation, educational research design, data analysis and school improvement recommendations.">
+              方案評估、教育研究設計、資料分析與學校改善建議。
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<footer>
+    <section class="section" id="programmes">
+      <div class="container">
+        <span class="eyebrow" data-zh="課程與方案" data-en="Programmes">課程與方案</span>
+        <h2 class="section-title"
+            data-zh="從專業發展到學生學習"
+            data-en="From professional growth to student learning">
+          從專業發展到學生學習
+        </h2>
 
-© 2026 iBridge Education
+        <div class="programmes">
+          <article class="programme reveal">
+            <h3 data-zh="學校與教師方案" data-en="School & Teacher Programmes">學校與教師方案</h3>
+            <p data-zh="適合國際學校、雙語學校、教育機構與教師團隊的客製化合作。"
+               data-en="Tailored partnerships for international schools, bilingual schools, educational organisations and teacher teams.">
+              適合國際學校、雙語學校、教育機構與教師團隊的客製化合作。
+            </p>
+            <a href="#contact" data-zh="洽詢合作 →" data-en="Discuss a partnership →">洽詢合作 →</a>
+          </article>
 
-</footer>
+          <article class="programme reveal">
+            <h3 data-zh="學生學習方案" data-en="Student Learning Programmes">學生學習方案</h3>
+            <p data-zh="涵蓋學術寫作、IB 準備、學習策略、心理韌性與跨文化溝通。"
+               data-en="Academic writing, IB preparation, learning strategies, wellbeing and intercultural communication.">
+              涵蓋學術寫作、IB 準備、學習策略、心理韌性與跨文化溝通。
+            </p>
+            <a href="#contact" data-zh="了解課程 →" data-en="Explore programmes →">了解課程 →</a>
+          </article>
+        </div>
+      </div>
+    </section>
 
+    <section class="section section-soft" id="research">
+      <div class="container research-grid">
+        <div class="research-panel reveal">
+          <div>
+            <h3 data-zh="以證據連結教育理想與實務" data-en="Connecting educational vision with evidence">以證據連結教育理想與實務</h3>
+            <p data-zh="我們重視可驗證、可反思且能持續改善的教育實踐。"
+               data-en="We value educational practice that is evidence-informed, reflective and continuously improving.">
+              我們重視可驗證、可反思且能持續改善的教育實踐。
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <span class="eyebrow" data-zh="研究重點" data-en="Research Focus">研究重點</span>
+          <h2 class="section-title"
+              data-zh="研究不是附加項目，而是改進教育的基礎"
+              data-en="Research is not an add-on; it is the foundation for improvement">
+            研究不是附加項目，而是改進教育的基礎
+          </h2>
+
+          <div class="research-list">
+            <div class="research-item">
+              <strong data-zh="應用神經科學與學習" data-en="Applied Neuroscience & Learning">應用神經科學與學習</strong>
+              <span data-zh="探討注意力、動機、壓力與自我調節如何影響學習。"
+                    data-en="Exploring how attention, motivation, stress and self-regulation shape learning.">
+                探討注意力、動機、壓力與自我調節如何影響學習。
+              </span>
+            </div>
+            <div class="research-item">
+              <strong data-zh="正向心理學與學生福祉" data-en="Positive Psychology & Wellbeing">正向心理學與學生福祉</strong>
+              <span data-zh="將優勢、韌性與福祉實踐融入課程與學校文化。"
+                    data-en="Embedding strengths, resilience and wellbeing into curriculum and school culture.">
+                將優勢、韌性與福祉實踐融入課程與學校文化。
+              </span>
+            </div>
+            <div class="research-item">
+              <strong data-zh="AI、寫作與評量" data-en="AI, Writing & Assessment">AI、寫作與評量</strong>
+              <span data-zh="研究生成式 AI 如何改變學習、回饋、作者身份與評量設計。"
+                    data-en="Examining how generative AI changes learning, feedback, authorship and assessment design.">
+                研究生成式 AI 如何改變學習、回饋、作者身份與評量設計。
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="resources">
+      <div class="container">
+        <span class="eyebrow" data-zh="資源中心" data-en="Resource Centre">資源中心</span>
+        <h2 class="section-title"
+            data-zh="分享可直接使用的教育資源"
+            data-en="Practical resources for immediate use">
+          分享可直接使用的教育資源
+        </h2>
+        <p class="section-lead"
+           data-zh="未來可在這裡放置文章、工具包、課程指南、研究摘要與免費下載。"
+           data-en="This space can host articles, toolkits, curriculum guides, research summaries and free downloads.">
+          未來可在這裡放置文章、工具包、課程指南、研究摘要與免費下載。
+        </p>
+
+        <div class="resources-grid">
+          <article class="resource-card reveal">
+            <div class="resource-cover">
+              <strong data-zh="課程設計指南" data-en="Curriculum Design Guide">課程設計指南</strong>
+            </div>
+            <div class="resource-body">
+              <h3 data-zh="建立清楚、連貫的學習進程" data-en="Build coherent learning progressions">建立清楚、連貫的學習進程</h3>
+              <p data-zh="適合課程領導者與教師團隊使用的規劃框架。"
+                 data-en="A planning framework for curriculum leaders and teaching teams.">
+                適合課程領導者與教師團隊使用的規劃框架。
+              </p>
+              <a class="text-link" href="#contact" data-zh="即將推出 →" data-en="Coming soon →">即將推出 →</a>
+            </div>
+          </article>
+
+          <article class="resource-card reveal">
+            <div class="resource-cover">
+              <strong data-zh="AI 教學工具包" data-en="AI Teaching Toolkit">AI 教學工具包</strong>
+            </div>
+            <div class="resource-body">
+              <h3 data-zh="把 AI 用於更好的學習" data-en="Use AI to improve learning">把 AI 用於更好的學習</h3>
+              <p data-zh="聚焦安全、倫理、學習目的與教師專業判斷。"
+                 data-en="Focused on safety, ethics, learning purpose and professional judgement.">
+                聚焦安全、倫理、學習目的與教師專業判斷。
+              </p>
+              <a class="text-link" href="#contact" data-zh="即將推出 →" data-en="Coming soon →">即將推出 →</a>
+            </div>
+          </article>
+
+          <article class="resource-card reveal">
+            <div class="resource-cover">
+              <strong data-zh="學生學習策略" data-en="Student Learning Strategies">學生學習策略</strong>
+            </div>
+            <div class="resource-body">
+              <h3 data-zh="培養獨立、有效率的學習者" data-en="Develop independent, effective learners">培養獨立、有效率的學習者</h3>
+              <p data-zh="結合自我調節、反思、動機與學習習慣。"
+                 data-en="Combining self-regulation, reflection, motivation and learning habits.">
+                結合自我調節、反思、動機與學習習慣。
+              </p>
+              <a class="text-link" href="#contact" data-zh="即將推出 →" data-en="Coming soon →">即將推出 →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-card reveal">
+          <span class="eyebrow" style="color:#9fe8e5" data-zh="聯絡 iBridge" data-en="Contact iBridge">聯絡 iBridge</span>
+          <h3 data-zh="一起討論你的教育需求" data-en="Let us discuss your educational needs">一起討論你的教育需求</h3>
+          <p data-zh="無論你正在規劃課程、教師培訓、研究合作或學生學習方案，都可以與我們聯絡。"
+             data-en="Contact us to discuss curriculum planning, professional learning, research collaboration or student programmes.">
+            無論你正在規劃課程、教師培訓、研究合作或學生學習方案，都可以與我們聯絡。
+          </p>
+          <ul class="contact-list">
+            <li>✉️ hello@ibridge.info</li>
+            <li>🌐 https://ibridge.info</li>
+            <li data-zh="📍 台灣・提供國際合作" data-en="📍 Taiwan · Available for international collaboration">📍 台灣・提供國際合作</li>
+          </ul>
+        </div>
+
+        <form class="contact-form reveal" action="mailto:hello@ibridge.info" method="post" enctype="text/plain">
+          <div class="field">
+            <label for="name" data-zh="姓名" data-en="Name">姓名</label>
+            <input id="name" name="name" type="text" required>
+          </div>
+          <div class="field">
+            <label for="email" data-zh="Email" data-en="Email">Email</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+          <div class="field">
+            <label for="message" data-zh="訊息" data-en="Message">訊息</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit" data-zh="送出訊息" data-en="Send message">送出訊息</button>
+          <p class="form-note"
+             data-zh="此版本會開啟裝置上的 Email App。之後可升級為 Cloudflare 表單或專業寄信服務。"
+             data-en="This version opens the device email app. It can later be upgraded to a Cloudflare form or professional email service.">
+            此版本會開啟裝置上的 Email App。之後可升級為 Cloudflare 表單或專業寄信服務。
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="#home" style="color:white">
+            <span class="brand-mark">iB</span>
+            <span>iBridge Education</span>
+          </a>
+          <p style="margin-top:16px"
+             data-zh="Connecting learning, research and innovation."
+             data-en="Connecting learning, research and innovation.">
+            Connecting learning, research and innovation.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-zh="網站" data-en="Website">網站</h4>
+          <a href="#about" data-zh="關於我們" data-en="About">關於我們</a>
+          <a href="#services" data-zh="服務" data-en="Services">服務</a>
+          <a href="#research" data-zh="研究" data-en="Research">研究</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-zh="資源" data-en="Resources">資源</h4>
+          <a href="#programmes" data-zh="課程方案" data-en="Programmes">課程方案</a>
+          <a href="#resources" data-zh="資源中心" data-en="Resource Centre">資源中心</a>
+          <a href="#contact" data-zh="合作洽詢" data-en="Partnerships">合作洽詢</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-zh="聯絡" data-en="Contact">聯絡</h4>
+          <a href="mailto:hello@ibridge.info">hello@ibridge.info</a>
+          <a href="https://ibridge.info">ibridge.info</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> iBridge Education.</span>
+        <span data-zh="保留所有權利。" data-en="All rights reserved.">保留所有權利。</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    const langToggle = document.getElementById("langToggle");
+    const translatableElements = document.querySelectorAll("[data-zh][data-en]");
+    let currentLanguage = "zh";
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => navLinks.classList.remove("open"));
+    });
+
+    langToggle.addEventListener("click", () => {
+      currentLanguage = currentLanguage === "zh" ? "en" : "zh";
+      document.documentElement.lang = currentLanguage === "zh" ? "zh-Hant" : "en";
+      langToggle.textContent = currentLanguage === "zh" ? "EN" : "中文";
+
+      translatableElements.forEach(element => {
+        element.innerHTML = element.dataset[currentLanguage];
+      });
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll(".reveal").forEach(element => observer.observe(element));
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
-
-</html>。
+</html>
